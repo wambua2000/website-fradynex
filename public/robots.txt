@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fradynex.com/sitemap.xml

@@ -1,0 +1,15 @@
+---
+# ==============================================================================
+# cPanel Git Version Control Automated Deployment Configuration
+# Used by cPanel -> Git Version Control -> Deploy HEAD Commit
+# ==============================================================================
+deployment:
+  tasks:
+    # 1. Target directory (typically /home/<username>/public_html/ for main domain)
+    # Adjust the path to match your cPanel username or subdomain if needed:
+    - export DEPLOYPATH=${DEPLOYPATH:-/home/$(whoami)/public_html/}
+    # 2. Deploy dist build files to public_html
+    - /bin/mkdir -p $DEPLOYPATH
+    - /bin/cp -R dist/* $DEPLOYPATH/
+    # 3. Ensure hidden files such as .htaccess are copied
+    - /bin/cp dist/.htaccess $DEPLOYPATH/.htaccess

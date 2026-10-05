@@ -1,0 +1,8 @@
+{
+  "name": "Fradynex | AI-Powered Innovative Software Solutions",
+  "description": "AI-Driven Innovation for Smarter Digital Solutions.",
+  "requestFramePermissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
