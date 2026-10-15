@@ -1,6 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/fradynex/public_html/
+    - export DEPLOYPATH=/home/fradynex/myapp/
     - /bin/cp -R * $DEPLOYPATH
 
