@@ -6,8 +6,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-// Cloud Run and hosting environments provide the PORT environment variable
-const PORT = parseInt(process.env.PORT || '8080', 10);
+// Cloud Run, local development, and hosting environments provide the PORT environment variable
+const PORT = parseInt(process.env.PORT || '3000', 10);
 
 // Health check endpoint for load balancers and hosting monitors
 app.get('/health', (_req, res) => {
