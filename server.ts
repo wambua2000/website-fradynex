@@ -6,8 +6,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-// Cloud Run, local development, and hosting environments provide the PORT environment variable
-const PORT = parseInt(process.env.PORT || '3000', 10);
+// Listen on DEFAULT_APP_PORT (3000) or PORT (avoiding 8080 collision with ingress nginx)
+const PORT = parseInt(process.env.DEFAULT_APP_PORT || (process.env.PORT && process.env.PORT !== '8080' ? process.env.PORT : '3000'), 10);
 
 // Health check endpoint for load balancers and hosting monitors
 app.get('/health', (_req, res) => {

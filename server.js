@@ -7,8 +7,8 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
-// cPanel Passenger and cloud environments pass the port in process.env.PORT
-const PORT = parseInt(process.env.PORT || '3000', 10);
+// cPanel Passenger and cloud environments pass the port in process.env.PORT or DEFAULT_APP_PORT
+const PORT = parseInt(process.env.DEFAULT_APP_PORT || (process.env.PORT && process.env.PORT !== '8080' ? process.env.PORT : '3000'), 10);
 
 // Basic health check endpoint
 app.get('/health', (_req, res) => {
